@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Card | DanoZap</title>
+    <script src="https://kit.fontawesome.com/4978fb604a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="picture">
+            <span class="fas fa-user"></span>
+        </div>
+        <div class="header">Daniel Zapata</div>
+        <div class="follow-me">Follow me on</div>
+        <div class="social">
+            <a href="http://instagram.com/danozap" target="_blank">
+                <i class="fab fa-instagram ig"></i>
+            </a>
+            <a href="" target="_blank">
+                <i class="fab fa-linkedin lk"></i>
+            </a>
+            <a href="http://github.com/danozap" target="_blank">
+                <i class="fa-brands fa-github gh"></i>
+            </a>
+        </div>
+    </div>
+    <script>
+        $('body').mousemove(function(p){
+            let rotateX = -($(window).innerWidth()/2-p.pageX)/20;
+            let rotateY = -($(window).innerHeight()/2-p.pageY)/10;
+            $('.container').css("transform", "rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)")
+        });
+        $(document).mouseout(function(){
+            $('.container').css("transform","")
+        })
+    </script>
+</body>
+</html>
